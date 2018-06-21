@@ -1,0 +1,7 @@
+Vue has some really nice documentation https://vuejs.org/v2/guide/
+
+v-model="nameofvuedatakey" is how to do data binding (say to an input)
+https://vuejs.org/v2/guide/forms.html#Basic-Usage
+
+component data must be set to a function that returns the data in order to have data binding
+https://vuejs.org/v2/guide/components.html#data-Must-Be-a-Function
