@@ -16,7 +16,11 @@ Vue.component(
                 name: '',
                 age: '',
                 birthday: '',
-                gender: '',
+                gender: [
+                    {'name': 'Male', 'status' : false},
+                    {'name': 'Female', 'status' : false},
+                    {'name': 'Other', 'status' : false}
+                ],
                 niceDay: ''
             }
         },
@@ -37,6 +41,22 @@ Vue.component(
                 '<input id="" type="date" placeholder="mm/dd/yyyy" aria-label="What is your birthday (mm/dd/yyyy)?" v-model="birthday">'+
                 '{{birthday}}'+
             '</div>'+
+            '<div>'+
+                '<label for="">What is your birthday?</label>'+
+                '<input id="" type="date" placeholder="mm/dd/yyyy" aria-label="What is your birthday (mm/dd/yyyy)?" v-model="birthday">'+
+                '{{birthday}}'+
+            '</div>'+
+        '</div>'
+    }
+)
+
+Vue.component(
+    'radio-div',
+    {
+        template:
+        '<div>'+
+            '<label for="">{{name}}</label>'+
+            '<input type="radio" placeholder="Enter your name..." value="{{value}}" name="{{name}}">'+        
         '</div>'
     }
 )
