@@ -30,18 +30,18 @@ Vue.component(
         template:
         '<div class="row form-group">'+
             '<div class="col-sm-12">'+
-                '<label for="">What is your name?</label>'+
-                '<input id="" type="text" placeholder="Enter your name..." v-model="name">'+
+                '<label for="name">What is your name?</label>'+
+                '<input id="name" type="text" placeholder="Enter your name..." v-model="name">'+
                 '{{name}}'+
             '</div>'+
             '<div class="col-sm-12">'+
-                '<label for="">What is your age?</label>'+
-                '<input id="" type="number" min="0" placeholder="Enter your age..." v-model="age">'+
+                '<label for="age">What is your age?</label>'+
+                '<input id="age" type="number" min="0" placeholder="Enter your age..." v-model="age">'+
                 '{{age}}'+
             '</div>'+
             '<div class="col-sm-12">'+
-                '<label for="">What is your birthday?</label>'+
-                '<input id="" type="date" placeholder="mm/dd/yyyy" aria-label="What is your birthday (mm/dd/yyyy)?" v-model="birthday">'+
+                '<label for="birthday">What is your birthday?</label>'+
+                '<input id="birthday" type="date" placeholder="mm/dd/yyyy" aria-label="What is your birthday (mm/dd/yyyy)?" v-model="birthday">'+
                 '{{birthday}}'+
             '</div>'+
             '<fieldset class="col-sm-12">'+
@@ -52,6 +52,11 @@ Vue.component(
                 '</div>'+
             '</fieldset>'+
             '{{gender}}'+
+            '<div class="col-sm-12" v-if="(gender !== null && gender !== \'male\' && gender !== \'female\')">'+
+                '<label for="gender-expand">Enter your gendering label</label>'+
+                '<input id="gender-expand" type="text" placeholder="Enter your gendering..." v-model="gender">'+
+                '{{age}}'+
+            '</div>'+
         '</div>'
     }
 )
