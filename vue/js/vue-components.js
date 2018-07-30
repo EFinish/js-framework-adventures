@@ -60,14 +60,3 @@ Vue.component(
         '</div>'
     }
 )
-
-Vue.component(
-    'radio-div',
-    {
-        template:
-        '<div>'+
-            '<label for="">{{name}}</label>'+
-            '<input type="radio" placeholder="Enter your name..." value="{{value}}" name="{{name}}">'+        
-        '</div>'
-    }
-)
