@@ -13,15 +13,16 @@ Vue.component(
     {
         data: function() {
             return {
-                name: '',
-                age: '',
-                birthday: '',
-                gender: [
-                    {'name': 'Male', 'status' : false},
-                    {'name': 'Female', 'status' : false},
-                    {'name': 'Other', 'status' : false}
-                ],
-                niceDay: ''
+                name: null,
+                age: null,
+                birthday: null,
+                gender: null,
+                nice_day: null,
+                gender_options: [
+                    'male',
+                    'female',
+                    'other'
+                ]
             }
         },
         template:
@@ -41,11 +42,14 @@ Vue.component(
                 '<input id="" type="date" placeholder="mm/dd/yyyy" aria-label="What is your birthday (mm/dd/yyyy)?" v-model="birthday">'+
                 '{{birthday}}'+
             '</div>'+
-            '<div>'+
-                '<label for="">What is your birthday?</label>'+
-                '<input id="" type="date" placeholder="mm/dd/yyyy" aria-label="What is your birthday (mm/dd/yyyy)?" v-model="birthday">'+
-                '{{birthday}}'+
-            '</div>'+
+            '<fieldset>'+
+                '<legend>What is your gender?</legend>'+
+                '<div v-for="option in gender_options">'+
+                    '<label :for="\'gender-options-\'+option">{{option}}</label>'+
+                    '<input type="radio" :id="\'gender-options-\'+option" :value="option" v-model="gender">'+
+                '</div>'+
+            '</fieldset>'+
+            '{{gender}}'+
         '</div>'
     }
 )
@@ -60,14 +64,3 @@ Vue.component(
         '</div>'
     }
 )
-
-var pp = new Vue({
-    el: "#app",
-    data: {
-        name: '',
-        age: '',
-        birthday: '',
-        gender: '',
-        niceDay: ''
-    }
-})
