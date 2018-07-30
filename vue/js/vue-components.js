@@ -24,6 +24,11 @@ Vue.component(
                     'male',
                     'female',
                     'other'
+                ],
+                nice_day_options: [
+                    'yes',
+                    'no',
+                    'maybe so'
                 ]
             }
         },
@@ -47,16 +52,24 @@ Vue.component(
             '<fieldset class="col-sm-12">'+
                 '<legend>What is your gender?</legend>'+
                 '<div v-for="option in gender_options" >'+
+                    '<input type="radio" :id="\'gender-options-\'+option" :value="option" v-model="gender"> '+
                     '<label :for="\'gender-options-\'+option">{{option}}</label>'+
-                    '<input type="radio" :id="\'gender-options-\'+option" :value="option" v-model="gender">'+
                 '</div>'+
             '</fieldset>'+
             '{{gender}}'+
             '<div class="col-sm-12" v-if="(gender !== null && gender !== \'male\' && gender !== \'female\')">'+
-                '<label for="gender-expand">Enter your gendering label</label>'+
+            '<label for="gender-expand">Enter your gendering label</label>'+
                 '<input id="gender-expand" type="text" placeholder="Enter your gendering..." v-model="gender">'+
                 '{{age}}'+
             '</div>'+
+            '<fieldset class="col-sm-12">'+
+                '<legend>Are you having a nice day?</legend>'+
+                '<div v-for="option in nice_day_options" >'+
+                    '<input type="radio" :id="\'nice_day-options-\'+option" :value="option" v-model="nice_day"> '+
+                    '<label :for="\'nice_day-options-\'+option">{{option}}</label>'+
+                '</div>'+
+            '</fieldset>'+
+            '{{nice_day}}'+
         '</div>'
     }
 )
