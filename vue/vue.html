@@ -7,13 +7,16 @@
   <title>Vue Adventure</title>
   <meta name="description" content="JS Framework Adventures">
   <meta name="author" content="EFinish">
+  <link type="text/css" rel="stylesheet" href="https://unpkg.com/bootstrap/dist/css/bootstrap.min.css"/>
+  <link type="text/css" rel="stylesheet" href="https://unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.css"/>
+  <script src="https://unpkg.com/bootstrap-vue@2.0.0-rc.11/dist/bootstrap-vue.js"></script>
   <script src="https://unpkg.com/vue"></script>
   <link rel="stylesheet" href="style.css">
 
 </head>
 
 <body>
-  <div id="app">
+  <div id="app" class="container">
     <vue-example-header></vue-example-header>
     <form-one :name="name" :age="age" :birthday="birthday" :gender="gender" :nice_day="nice_day"></form-one>
   </div>
