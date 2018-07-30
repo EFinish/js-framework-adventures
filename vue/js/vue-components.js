@@ -70,6 +70,24 @@ Vue.component(
                 '</div>'+
             '</fieldset>'+
             '{{nice_day}}'+
-        '</div>'
+            '<div class="col-sm-1">'+
+                '<button @click="submit200" class="btn btn-success">'+
+                    '200'+ 
+                '</button>'+
+            '</div>'+
+            '<div class="col-sm-1">'+
+                '<button @click="submit500" class="btn btn-success">'+
+                    '500'+ 
+                '</button>'+
+            '</div>'+
+        '</div>',
+        methods: {
+            submit200: function() {
+                console.log(200);
+            },
+            submit500: function() {
+                console.log(500);
+            }
+        }
     }
 )
