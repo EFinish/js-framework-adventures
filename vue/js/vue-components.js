@@ -37,17 +37,14 @@ Vue.component(
             '<div class="col-sm-12">'+
                 '<label for="name">What is your name?</label>'+
                 '<input id="name" type="text" placeholder="Enter your name..." v-model="name">'+
-                '{{name}}'+
             '</div>'+
             '<div class="col-sm-12">'+
                 '<label for="age">What is your age?</label>'+
                 '<input id="age" type="number" min="0" placeholder="Enter your age..." v-model="age">'+
-                '{{age}}'+
             '</div>'+
             '<div class="col-sm-12">'+
                 '<label for="birthday">What is your birthday?</label>'+
                 '<input id="birthday" type="date" placeholder="mm/dd/yyyy" aria-label="What is your birthday (mm/dd/yyyy)?" v-model="birthday">'+
-                '{{birthday}}'+
             '</div>'+
             '<fieldset class="col-sm-12">'+
                 '<legend>What is your gender?</legend>'+
@@ -56,11 +53,9 @@ Vue.component(
                     '<label :for="\'gender-options-\'+option">{{option}}</label>'+
                 '</div>'+
             '</fieldset>'+
-            '{{gender}}'+
             '<div class="col-sm-12" v-if="(gender !== null && gender !== \'male\' && gender !== \'female\')">'+
-            '<label for="gender-expand">Enter your gendering label</label>'+
+                '<label for="gender-expand">Enter your gendering label</label>'+
                 '<input id="gender-expand" type="text" placeholder="Enter your gendering..." v-model="gender">'+
-                '{{age}}'+
             '</div>'+
             '<fieldset class="col-sm-12">'+
                 '<legend>Are you having a nice day?</legend>'+
@@ -69,7 +64,6 @@ Vue.component(
                     '<label :for="\'nice_day-options-\'+option">{{option}}</label>'+
                 '</div>'+
             '</fieldset>'+
-            '{{nice_day}}'+
             '<div class="col-sm-1">'+
                 '<button @click="submit200" class="btn btn-success">'+
                     '200'+ 
